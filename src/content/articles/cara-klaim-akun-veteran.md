@@ -32,3 +32,12 @@ tags: ["tutorial", "veteran", "gpt"]
 Jika pada step 5 gagal verif, tetep lanjut step 6 karena ada kemungkinan verif di bot gagal tapi aslinya berhasil.
 
 Kalau di refresh masih belum ke halaman checkout pay, ulangi ke step 5. Looping terus sampe berhasil — kalau hoki biasanya cukup 2-3 kali percobaan aja.
+
+tips: kalau sampe percobaan 5x masih gagal, 
+1. hentikan semua proses.. close semua aplikasi terkait (browser dan bot telegram) 
+2. lalu tunggu kurang lebih selama 2 jam.. 
+3. jika sudah kembali buka browser dan langsung buka url gpt veteran
+4. klik Verify eligibility
+5. biasanya langsung diarahin ke halaman checkout pay
+
+**_Good Luck!_** _**Pake Sewajarnya Aja Bukan untuk DIJUAL LAGI**_
