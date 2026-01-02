@@ -3,7 +3,7 @@
 /* Custom Theme Configuration */
 @theme {
   --font-family-sans: 'Plus Jakarta Sans', sans-serif;
-  
+
   /* Custom Colors */
   --color-bg-main: #060606;
   --color-text-primary: #ffffff;
@@ -64,13 +64,13 @@ body {
   top: 100px;
   left: 0;
   z-index: 0;
-  opacity: 0.65;
+  opacity: 0.85;
 }
 
 /* HR Border with gradient */
 .hr-border {
   background: linear-gradient(#000 0, #000 0) padding-box,
-              linear-gradient(270deg, #75f99100, #75f991 50.51%, #75f99100 101.07%) border-box;
+    linear-gradient(270deg, #75f99100, #75f991 50.51%, #75f99100 101.07%) border-box;
   border: 1px solid transparent;
   border-radius: 0;
   border-bottom: 0;
