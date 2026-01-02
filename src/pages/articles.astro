@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// Get all non-draft articles sorted by date
+const articles = (await getCollection('articles'))
+  .filter(article => !article.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('id-ID', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+---
+
+<Layout title="Artikel - Catatan & Tutorial">
+  <div class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <header class="max-w-4xl mx-auto mb-12">
+      <a href="/" class="inline-flex items-center gap-2 text-zinc-400 hover:text-accent transition-colors mb-6 group">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Kembali
+      </a>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        <span class="bg-gradient-to-r from-accent via-emerald-400 to-teal-400 bg-clip-text text-transparent">
+          📝 Artikel
+        </span>
+      </h1>
+      <p class="text-lg text-zinc-400 max-w-2xl">
+        Catatan, tutorial, dan berbagai tulisan lainnya.
+      </p>
+    </header>
+
+    <!-- Articles Grid -->
+    <main class="max-w-4xl mx-auto">
+      {articles.length === 0 ? (
+        <div class="text-center py-20">
+          <p class="text-zinc-500 text-lg">Belum ada artikel.</p>
+        </div>
+      ) : (
+        <div class="space-y-6">
+          {articles.map((article) => (
+            <a 
+              href={`/articles/${article.slug}`}
+              class="group block bg-zinc-900/40 hover:bg-zinc-900/70 border border-zinc-800 hover:border-accent/30 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5"
+            >
+              <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+                <div class="flex-1">
+                  <h2 class="text-xl font-semibold text-zinc-100 group-hover:text-accent transition-colors mb-2">
+                    {article.data.title}
+                  </h2>
+                  {article.data.description && (
+                    <p class="text-zinc-400 text-sm mb-3 line-clamp-2">
+                      {article.data.description}
+                    </p>
+                  )}
+                  <div class="flex flex-wrap items-center gap-3 text-xs text-zinc-500">
+                    <time datetime={article.data.date.toISOString()}>
+                      {formatDate(article.data.date)}
+                    </time>
+                    {article.data.author && (
+                      <>
+                        <span>•</span>
+                        <span>{article.data.author}</span>
+                      </>
+                    )}
+                    {article.data.tags && article.data.tags.length > 0 && (
+                      <div class="flex gap-2 ml-auto">
+                        {article.data.tags.slice(0, 3).map((tag) => (
+                          <span class="px-2 py-0.5 bg-accent/10 text-accent rounded-full">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <div class="hidden sm:flex items-center justify-center w-10 h-10 rounded-full bg-zinc-800 group-hover:bg-accent/20 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-zinc-400 group-hover:text-accent group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+    </main>
+  </div>
+</Layout>
