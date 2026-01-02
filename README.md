@@ -2,12 +2,11 @@
 
 Showcase portfolio website built with **Astro** and **Tailwind CSS v4**.
 
-![Preview](./preview.png)
-
 ## ✨ Features
 
 - **Astro 5** - Static Site Generator with blazing fast performance
 - **Tailwind CSS v4** - Modern utility-first CSS framework
+- **Centralized Data Management** - Edit all content from a single file
 - **Responsive Design** - Looks great on all device sizes
 - **Dark Theme** - Elegant dark theme with dotted background pattern
 - **Smooth Animations** - Beautiful hover effects and transitions
@@ -27,7 +26,8 @@ Showcase portfolio website built with **Astro** and **Tailwind CSS v4**.
 │   │   ├── ProjectCard.astro # Individual project card
 │   │   └── ProjectGrid.astro # Grid layout for projects
 │   ├── data/
-│   │   └── projects.ts       # Project data
+│   │   ├── site.ts           # General configuration (navbar, hero, footer, SEO)
+│   │   └── projects.ts       # List of all projects
 │   ├── layouts/
 │   │   └── Layout.astro      # Base layout
 │   ├── pages/
@@ -64,34 +64,68 @@ npm run preview
 
 ## 🎨 Customization
 
-### Adding New Projects
+### 🎯 Centralized Data Management
 
-Edit `src/data/projects.ts` to add or modify projects:
+**ALL WEBSITE CONTENT IS MANAGED FROM A SINGLE FILE:**
+
+Edit **`src/data/site.ts`** to change:
+
+| Section | Config Object | What can be changed |
+|---------|---------------|----------------------|
+| SEO & Metadata | `siteConfig` | Title, description, author, URL |
+| Navbar | `navbarConfig` | Logo text, CTA button text & link |
+| Hero | `heroConfig` | Badge, title, description |
+| Projects | `projects[]` | Semua project cards |
+| Footer | `footerConfig` | Copyright, social links |
+| Colors | `themeColors` | Referensi warna tema |
+
+### Example: Adding a New Project
 
 ```typescript
+// src/data/site.ts
+
 export const projects: Project[] = [
   {
-    title: "Your Project Name",
+    title: "Project Baru Anda",
     category: "Development",
     image: "https://example.com/image.jpg",
-    link: "/projects/your-project"
+    link: "/projects/new-project",
+    description: "Deskripsi singkat project"
   },
-  // ... more projects
+  // ... project lainnya
 ];
+```
+
+### Example: Changing Navbar
+
+```typescript
+// src/data/site.ts
+
+export const navbarConfig = {
+  logo: {
+    text: "nama",
+    accent: ".",
+    suffix: "dev",
+  },
+  cta: {
+    text: "HUBUNGI SAYA",
+    link: "/contact",
+  },
+};
 ```
 
 ### Styling
 
-Global styles and Tailwind theme customization is in `src/styles/global.css`. The theme uses custom CSS variables:
+Global styles and theme customization are in `src/styles/global.css`. The theme uses CSS variables:
 
-- `--color-bg-main`: Main background color (#060606)
+- `--color-bg-main`: Background main color (#060606)
 - `--color-text-primary`: Primary text color (#ffffff)
 - `--color-text-secondary`: Secondary text color (#dadada)
 - `--color-accent`: Accent color (#75f991)
 
-## � License
+## 📄 License
 
-MIT License - feel free to use this template for your own portfolio!
+MIT License - feel free to use this template for your portfolio!
 
 ---
 

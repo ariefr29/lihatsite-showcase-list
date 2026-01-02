@@ -1,18 +1,6 @@
 ---
 import ProjectCard from './ProjectCard.astro';
-
-interface Project {
-  title: string;
-  category: string;
-  image: string;
-  link?: string;
-}
-
-interface Props {
-  projects: Project[];
-}
-
-const { projects } = Astro.props;
+import { projects } from '../data/site';
 ---
 
 <section class="pb-32 px-6">

@@ -1,22 +1,7 @@
 ---
-interface SocialLink {
-  label: string;
-  href: string;
-}
+import { footerConfig } from '../data/site';
 
-interface Props {
-  copyright?: string;
-  socialLinks?: SocialLink[];
-}
-
-const { 
-  copyright = "© 2024 LIHAT.SITE — DEVELOPER SHOWCASE",
-  socialLinks = [
-    { label: "GITHUB", href: "#" },
-    { label: "LINKEDIN", href: "#" },
-    { label: "RESUME", href: "#" }
-  ]
-} = Astro.props;
+const { copyright, socialLinks } = footerConfig;
 ---
 
 <footer class="py-12 border-t border-white/5 bg-[#060606]">

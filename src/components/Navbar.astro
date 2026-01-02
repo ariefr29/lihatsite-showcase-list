@@ -1,23 +1,20 @@
 ---
-interface Props {
-  ctaLink?: string;
-  ctaText?: string;
-}
+import { navbarConfig } from '../data/site';
 
-const { ctaLink = "#", ctaText = "BUAT WEBSITE" } = Astro.props;
+const { logo, cta } = navbarConfig;
 ---
 
 <nav class="fixed top-0 w-full z-50 bg-[#060606]/80 backdrop-blur-xl border-b border-white/5">
   <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="/" class="text-xl font-bold tracking-tighter hover:text-[#75f991] transition-colors">
-      lihat<span class="text-[#75f991]">.</span>site
+      {logo.text}<span class="text-[#75f991]">{logo.accent}</span>{logo.suffix}
     </a>
     
     <a 
-      href={ctaLink} 
+      href={cta.link} 
       class="px-5 py-2 bg-[#75f991] text-black text-xs font-extrabold rounded-full hover:scale-105 transition-transform tracking-tight"
     >
-      {ctaText}
+      {cta.text}
     </a>
   </div>
 </nav>

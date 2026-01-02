@@ -4,12 +4,11 @@ import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
 import ProjectGrid from '../components/ProjectGrid.astro';
 import Footer from '../components/Footer.astro';
-import { projects } from '../data/projects';
 ---
 
-<Layout title="Lihat.site - Web Developer Showcase">
+<Layout>
   <Navbar />
   <Hero />
-  <ProjectGrid projects={projects} />
+  <ProjectGrid />
   <Footer />
 </Layout>
