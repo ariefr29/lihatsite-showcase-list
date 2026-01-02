@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+/* Custom Theme Configuration */
+@theme {
+  --font-family-sans: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Custom Colors */
+  --color-bg-main: #060606;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #dadada;
+  --color-accent: #75f991;
+}
+
+/* Base Styles */
+body {
+  background-color: var(--color-bg-main);
+  background-image: radial-gradient(#1a1a1a 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+  font-family: var(--font-family-sans);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Project Card Transitions */
+.project-card {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Icon Box Transitions */
+.icon-box {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.project-card:hover .icon-box {
+  transform: rotate(45deg) scale(1.1);
+  color: var(--color-accent);
+}
+
+/* Image Zoom Transitions */
+.img-zoom {
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.5s ease;
+}
+
+.project-card:hover .img-zoom {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+/* Card Title */
+.card-title {
+  letter-spacing: -0.02em;
+}
+
+/* Hero Background */
+.hero-bg {
+  background-image: url('/Asset-bg-wave.webp');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: auto 463px;
+  width: 100%;
+  height: 450px;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  z-index: 0;
+  opacity: 0.65;
+}
+
+/* HR Border with gradient */
+.hr-border {
+  background: linear-gradient(#000 0, #000 0) padding-box,
+              linear-gradient(270deg, #75f99100, #75f991 50.51%, #75f99100 101.07%) border-box;
+  border: 1px solid transparent;
+  border-radius: 0;
+  border-bottom: 0;
+}

@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import ProjectGrid from '../components/ProjectGrid.astro';
+import Footer from '../components/Footer.astro';
+import { projects } from '../data/projects';
+---
+
+<Layout title="Lihat.site - Web Developer Showcase">
+  <Navbar />
+  <Hero />
+  <ProjectGrid projects={projects} />
+  <Footer />
+</Layout>

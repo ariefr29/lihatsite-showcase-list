@@ -1,0 +1,34 @@
+---
+interface Props {
+  badge?: string;
+  title?: string;
+  highlightedWord?: string;
+  description?: string;
+}
+
+const { 
+  badge = "Digital Developer Archive",
+  title = "Showcase",
+  highlightedWord = "Project",
+  description = "Kumpulan website / aplikasi web yang telah saya implementasikan sebagai solusi dari sebuah masalah yang nyata."
+} = Astro.props;
+---
+
+<section class="relative pt-40 pb-24 px-6 overflow-hidden">
+  <!-- Background elements -->
+  <div class="hero-bg"></div>
+  
+  <div class="max-w-6xl mx-auto relative z-10">
+    <div class="max-w-3xl text-center mx-auto">
+      <div class="inline-block px-3 py-1 rounded-full border border-[#75f991]/30 text-[#75f991] text-[10px] font-bold tracking-widest uppercase mb-6 bg-[#060606]/50 backdrop-blur-sm">
+        {badge}
+      </div>
+      <h1 class="text-5xl md:text-6xl font-extrabold tracking-tighter mb-8 uppercase">
+        {title} <br/>Web <span class="text-[#75f991]">{highlightedWord}</span>.
+      </h1>
+      <p class="text-[#dadada] text-lg md:text-xl leading-relaxed md:opacity-80">
+        {description}
+      </p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+interface Props {
+  title: string;
+  category: string;
+  image: string;
+  link?: string;
+}
+
+const { title, category, image, link = "#" } = Astro.props;
+---
+
+<a href={link} class="project-card group cursor-pointer block">
+  <div class="aspect-video overflow-hidden bg-zinc-900 mb-6">
+    <img 
+      src={image} 
+      alt={title} 
+      class="img-zoom w-full h-full object-cover grayscale group-hover:grayscale-0 opacity-40 group-hover:opacity-100"
+      loading="lazy"
+    >
+  </div>
+  <div class="flex justify-between items-start px-1">
+    <div>
+      <p class="text-[#75f991] text-[10px] font-bold uppercase tracking-[0.2em] mb-2 opacity-80">
+        {category}
+      </p>
+      <h3 class="card-title text-lg font-bold text-white group-hover:text-[#75f991] transition-colors duration-500">
+        {title}
+      </h3>
+    </div>
+    <div class="icon-box text-white/20">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 7h10v10"/>
+        <path d="M7 17 17 7"/>
+      </svg>
+    </div>
+  </div>
+</a>
