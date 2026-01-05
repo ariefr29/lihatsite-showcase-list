@@ -9,7 +9,8 @@ tags: ["tutorial", "veteran", "gpt"]
 ## Disclaimer
 
 - Buat sewajarnya aja buat pemakaian pribadi 
-- Tidak untuk dijual lagi 
+- Tidak untuk dijual lagi
+- Usahakan jangan pakai akun utama
 
 ## Stepnya
 
@@ -18,7 +19,7 @@ tags: ["tutorial", "veteran", "gpt"]
 2. Verify eligibility
 3. Copy link form (sheerid)
 4. Masukin ke bot:  
-   [tinyurl.com/ms8mpfhj](https://tinyurl.com/ms8mpfhj)
+   [tinyurl.com/tafz79ht](https://tinyurl.com/tafz79ht)
 5. Tunggu sampe verifikasi selesai
 6. Balik ke link form dan refresh halaman
 7. Next-next aja
