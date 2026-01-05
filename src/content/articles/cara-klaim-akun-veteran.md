@@ -10,7 +10,7 @@ tags: ["tutorial", "veteran", "gpt"]
 
 - Buat sewajarnya aja buat pemakaian pribadi 
 - Tidak untuk dijual lagi
-- Usahakan jangan pakai akun utama
+- Usahakan jangan pakai akun utama guna menghindari hal2 yang tidak di inginkan
 
 ## Stepnya
 
